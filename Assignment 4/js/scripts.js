@@ -85,9 +85,9 @@ function validateForm() {
 				favoriteDogDreed = "Other";
 			}
 			outputResult += `Favorite Dog Breed: ${favoriteDogDreed}\n`;
-			outputResult.innerText = `Name: ${name}\nUsername: ${userName}\nPassword: ${password}\nAge: ${age}\nShort Bio: ${bio}\nFirst Letter of Name: ${firstLetterOfName}\nGender: ${gender}\n`;
 		}
 	}
+	outputResult.innerText = `Name: ${name}\nUsername: ${userName}\nPassword: ${password}\nAge: ${age}\nShort Bio: ${bio}\nFirst Letter of Name: ${firstLetterOfName}\nGender: ${gender}\n`;
 }
 
 function selectFavoriteDogBreed() {
