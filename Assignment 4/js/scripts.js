@@ -1,3 +1,4 @@
+// Ashton Willingham
 function validateForm() {
 	let name = document.getElementById("name").value;
 	let userName = document.getElementById("username").value;
@@ -8,10 +9,7 @@ function validateForm() {
 	let validationIsSuccessful = true;
 	let outputResult = "";
 	let outputContainer = document.getElementById("output");
-	/*
-g. If the user does not check the I certify that I like dogs checkbox, then she is not
-allowed to select a favorite dog breed (i.e., in that case, she can only select the I did
-not say I likedogs option). (5 points)*/
+
 	if (!name || !userName || !password || !age || !bio) {
 		outputResult += "Please fill out all fields.\n";
 		validationIsSuccessful = false;
@@ -69,8 +67,6 @@ not say I likedogs option). (5 points)*/
 			gender = "Prefer not to say";
 		}
 
-		outputResult.innerText = `Name: ${name}\nUsername: ${userName}\nPassword: ${password}\nAge: ${age}\nShort Bio: ${bio}\nFirst Letter of Name: ${firstLetterOfName}\nGender: ${gender}\n`;
-
 		if (likeDogCertify) {
 			let favoriteDogDreedCode = document.getElementById("topdog").value;
 			let favoriteDogDreed;
@@ -88,42 +84,26 @@ not say I likedogs option). (5 points)*/
 			} else if (favoriteDogDreedCode === "5") {
 				favoriteDogDreed = "Other";
 			}
-
 			outputResult += `Favorite Dog Breed: ${favoriteDogDreed}\n`;
+			outputResult.innerText = `Name: ${name}\nUsername: ${userName}\nPassword: ${password}\nAge: ${age}\nShort Bio: ${bio}\nFirst Letter of Name: ${firstLetterOfName}\nGender: ${gender}\n`;
 		}
 	}
-	alert(outputResult);
-	outputContainer.innerText = outputResult;
-
-	if (!validationIsSuccessful) {
-	}
-
-	function selectFavoriteDogBreed() {
-		let checkBox = document.getElementById("udogs");
-		let selectList = document.getElementById("topdog");
-		if (checkBox.checked == true) {
-			selectList.disabled = false;
-		} else {
-			selectList.value = "did-not-say";
-			selectList.disabled = true;
-		}
-	}
-
-	document.addEventListener("DOMContentLoaded", function () {
-		let selectList = document.getElementById("topdog");
-		selectList.disabled = true;
-		let checkBox = document.getElementById("udogs");
-		checkBox.addEventListener("change", selectFavoriteDogBreed);
-	});
 }
 
-// function validateForm() {
-// 	var name = document.getElementById("name").value;
-// 	var outputResult = "";
-// 	if (name == "") {
-// 		outputResult = "Everything must be filled out";
-// 		document.getElementById("output").innerText = outputResult;
-// 		// alert("Name must be filled out");
-// 		return false;
-// 	}
-// }
+function selectFavoriteDogBreed() {
+	let checkBox = document.getElementById("udogs");
+	let selectList = document.getElementById("topdog");
+	if (checkBox.checked == true) {
+		selectList.disabled = false;
+	} else {
+		selectList.value = "did-not-say";
+		selectList.disabled = true;
+	}
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+	let selectList = document.getElementById("topdog");
+	selectList.disabled = true;
+	let checkBox = document.getElementById("udogs");
+	checkBox.addEventListener("change", selectFavoriteDogBreed);
+});

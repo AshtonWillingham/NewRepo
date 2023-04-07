@@ -1,38 +1,41 @@
+/* Ashton Willigham*/
+
 body {
-    box-sizing: border-box;
-    font-family: Verdana, Arial, sans-serif;
-    font-size: 14px;
+	box-sizing: border-box;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 14px;
 }
 
 .content {
-    width: 100%;
-    max-width: 800px;
-    margin: 20px auto 0;
+	width: 100%;
+	max-width: 800px;
+	margin: 20px auto 0;
 }
 
 .row {
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
-label, span {
-    display: inline-block;
-    width: 200px;
+label,
+span {
+	display: inline-block;
+	width: 200px;
 }
 
 textarea {
-    height: 10em;
+	height: 10em;
 }
 
 .column {
-    display: inline-block;
-    width: 49%;
-    vertical-align: top;
+	display: inline-block;
+	width: 49%;
+	vertical-align: top;
 }
 
 #genders {
-    display: inline-block;
+	display: inline-block;
 }
 
-#output{
-    color: blue;
+#output {
+	color: blue;
 }
