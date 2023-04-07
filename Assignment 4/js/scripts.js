@@ -1,6 +1,5 @@
-// weston was here
-
-function validateForm() {
+function validateForm(event) {
+	event.preventDefault();
 	let name = document.getElementById("name").value;
 	let userName = document.getElementById("username").value;
 	let password = document.getElementById("password").value;
@@ -8,8 +7,9 @@ function validateForm() {
 	let bio = document.getElementById("bio").value;
 	let firstLetterOfName = name.charAt(0);
 	let validationIsSuccessful = true;
-	let outputResult = document.getElementById("output");
-
+	let outputResult = "";
+	// let outputResult = document.getElementById("output");
+	console.log(outputResult);
 	if (
 		name === "" ||
 		userName === "" ||
@@ -17,7 +17,7 @@ function validateForm() {
 		age === "" ||
 		bio === ""
 	) {
-		outputResult.innerText = "Please fill out all fields.\n";
+		outputResult += "Please fill out all fields.\n";
 		validationIsSuccessful = false;
 	}
 
@@ -53,7 +53,7 @@ function validateForm() {
 			gender = "Prefer not to say";
 		}
 
-		outputResult.innerText = `Name: ${name}\nUsername: ${userName}\nPassword: ${password}\nAge: ${age}\nShort Bio: ${bio}\nFirst Letter of Name: ${firstLetterOfName}\nGender: ${gender}\n`;
+		outputResult += `Name: ${name}\nUsername: ${userName}\nPassword: ${password}\nAge: ${age}\nShort Bio: ${bio}\nFirst Letter of Name: ${firstLetterOfName}\nGender: ${gender}\n`;
 
 		if (likeDogCertify) {
 			let favoriteDogDreedCode = document.getElementById("topdog").value;
@@ -101,4 +101,6 @@ function validateForm() {
 		let checkBox = document.getElementById("udogs");
 		checkBox.addEventListener("change", selectFavoriteDogBreed);
 	});
+
+	document.getElementById("main-form").addEventListener("submit", validateForm);
 }
